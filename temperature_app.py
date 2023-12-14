@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 from joblib import load
 from sklearn.metrics import mean_squared_error
-from math import sqrt
+
 
 # Load the dataset
-df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
+#df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
 
 # Load the trained models
 regressor_max = load("regressor1.pkl")
