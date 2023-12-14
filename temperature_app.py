@@ -31,7 +31,7 @@ y_min_mean = df['Min Temperature'].mean()
 # Display the index and degrees of the selected planet and the rest
 if not index_of_date.empty:
     closest_index_of_date = index_of_date[0]
-    st.subheader("Selected Planet Degrees:")
+    st.subheader("Planet Degrees:")
     st.write("Index:", closest_index_of_date)
 
 
