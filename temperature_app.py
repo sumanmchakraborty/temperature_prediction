@@ -14,6 +14,8 @@ df['Date'] = pd.to_datetime(df['Date'],format='%d-%m-%Y')
 regressor_max = load("regressor1.pkl")
 regressor_min = load("regressor2.pkl")
 
+st.markdown("<h1 style='color: yellow; text-align: center;'>PREDICTION OF TEMPERATURE</h1>", unsafe_allow_html=True)
+
 # Asking user to select day, month, and year
 day_temp = st.number_input("Enter Day:", min_value=1, max_value=31, value=15)
 month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6)
