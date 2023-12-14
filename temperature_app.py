@@ -9,7 +9,7 @@ import datetime as dt
 # Load the dataset
 #df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
 df = pd.read_csv('Day-wise planets degree and temperature.csv', parse_dates = True)
-df['Date'] = pd.to_datetime(df['Date'])
+df['Date'] = pd.to_datetime(df['Date'],format='%d-%m-%Y')
 # Load the trained models
 regressor_max = load("regressor1.pkl")
 regressor_min = load("regressor2.pkl")
