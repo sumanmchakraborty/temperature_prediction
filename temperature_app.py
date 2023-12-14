@@ -17,9 +17,9 @@ regressor_min = load("regressor2.pkl")
 st.markdown("<h1 style='color: yellow; text-align: center;'>PREDICTION OF TEMPERATURE</h1>", unsafe_allow_html=True)
 
 # Asking user to select day, month, and year
-day_temp = st.number_input("Enter Day:", min_value=1, max_value=31, value=15)
-month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6)
-year_temp = st.number_input("Enter Year:", min_value=1900, max_value=2100, value=2019)
+day_temp = st.number_input("Enter Day:", min_value=1, max_value=31, value=15,format="%f")
+month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6,format="%f")
+year_temp = st.number_input("Enter Year:", min_value=1900, max_value=2100, value=2019,format="%f")
 
 # Find the index of the specified date based on day and month
 target_month_day = pd.to_datetime(f"{day_temp}-{month_temp}-{year_temp}", format='%d-%m-%Y')
