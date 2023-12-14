@@ -1,29 +1,12 @@
 import streamlit as st
 import pandas as pd
-import openpyxl
 import numpy as np
 from joblib import load
 from sklearn.metrics import mean_squared_error
 
 
 # Load the dataset
-
-
-
-# Provide the full path to the Excel file
-file_path = 'Day-wise planets degree and temperature.xlsx'
-
-# Load the Excel file using openpyxl
-workbook = openpyxl.load_workbook(file_path)
-
-# Select the desired sheet from the workbook (replace 'Sheet1' with your actual sheet name)
-sheet_name = 'Sheet1'
-sheet = workbook[sheet_name]
-
-# Convert the selected sheet to a Pandas DataFrame
-df = pd.DataFrame(sheet.values, columns=[col.value for col in sheet[1]])
-
-#df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
+df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
 
 # Load the trained models
 regressor_max = load("regressor1.pkl")
