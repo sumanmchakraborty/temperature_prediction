@@ -53,11 +53,11 @@ if not index_of_date.empty:
 
 
 
-    s_max = sqrt(mean_squared_error([actual_max_temp], [max_temp_prediction]))
+    s_max = (mean_squared_error([actual_max_temp], [max_temp_prediction]))**(1/2)
     accuracy_max = round((1 - s_max / (0.1 * y_max_mean)) * 100, 2)
 
 
-    s_min = sqrt(mean_squared_error([actual_min_temp], [min_temp_prediction]))
+    s_min = (mean_squared_error([actual_min_temp], [min_temp_prediction]))**(1/2)
     accuracy_min = round((1 - s_min / (0.1 * y_min_mean)) * 100, 2)
 
 
