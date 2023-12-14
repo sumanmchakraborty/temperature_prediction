@@ -6,7 +6,8 @@ from sklearn.metrics import mean_squared_error
 
 
 # Load the dataset
-df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
+#df = pd.read_excel('Day-wise planets degree and temperature.xlsx')
+df = pd.read_csv('Day-wise planets degree and temperature.csv', parse_dates = True)
 
 # Load the trained models
 regressor_max = load("regressor1.pkl")
