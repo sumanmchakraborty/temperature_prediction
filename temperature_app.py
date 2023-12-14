@@ -17,9 +17,9 @@ regressor_min = load("regressor2.pkl")
 st.markdown("<h1 style='color: yellow; text-align: center;'>PREDICTION OF TEMPERATURE</h1>", unsafe_allow_html=True)
 
 # Asking user to select day, month, and year
-day_temp = st.number_input("Enter Day:", min_value=1, max_value=31, value=15,format="%f")
-month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6,format="%f")
-year_temp = st.number_input("Enter Year:", min_value=1900, max_value=2100, value=2019,format="%f")
+day_temp = st.number_input("Enter Day:", min_value=1, max_value=31, value=15)
+month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6)
+year_temp = st.number_input("Enter Year:", min_value=1900, max_value=2100, value=2019)
 
 # Find the index of the specified date based on day and month
 target_month_day = pd.to_datetime(f"{day_temp}-{month_temp}-{year_temp}", format='%d-%m-%Y')
@@ -39,7 +39,7 @@ if not index_of_date.empty:
     # Display degrees of selected planets in number_input forms
     selected_planets_degrees = df.iloc[closest_index_of_date, 3:].tolist()
     for i, degree in enumerate(selected_planets_degrees):
-        selected_planets_degrees[i] = st.number_input(f"Enter {df.columns[i+3]}:", value=degree, step=1.0)
+        selected_planets_degrees[i] = st.number_input(f"Enter {df.columns[i+3]}:", value=degree,  format="%.6f", step=0.01)
     
     # Make temperature prediction
     input_data_temp = np.array([[day_temp, month_temp, year_temp]+selected_planets_degrees])
