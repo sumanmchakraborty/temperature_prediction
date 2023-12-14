@@ -20,8 +20,7 @@ month_temp = st.number_input("Enter Month:", min_value=1, max_value=12, value=6)
 year_temp = st.number_input("Enter Year:", min_value=1900, max_value=2100, value=2023)
 
 # Find the index of the specified date based on day and month
-target_month_day = pd.to_datetime(f"{day_temp}-{month_temp}", format='%d-%m')
-index_of_date = df[df['Date'].dt.strftime('%d-%m') == target_month_day.strftime('%d-%m')].index
+index_of_date = df[(df['Date'].dt.day == day_temp) & (df['Date'].dt.month == month_temp)].index
 
 y_max_mean = df['Max Temperature'].mean()
 y_min_mean = df['Min Temperature'].mean()
