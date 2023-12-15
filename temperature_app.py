@@ -69,7 +69,7 @@ if not index_of_date.empty:
     st.markdown(f"Accuracy for Max Temperature: <span style='color: green;'>{accuracy_max} %</span>",unsafe_allow_html=True)
     st.markdown(f"Accuracy for Min Temperature: <span style='color: green;'>{accuracy_min} %</span>",unsafe_allow_html=True)
 
-    st.subheader("Model:")
+    st.subheader("Model Used:\n")
     st.markdown("<span style='color: blue;'>Random Forest Regression</span>",unsafe_allow_html=True)
 
 
